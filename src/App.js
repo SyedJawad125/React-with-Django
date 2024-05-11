@@ -7,8 +7,10 @@ import Forms from './pages/Forms';
 import Home from './pages/Home';
 import About from './pages/About';
 import Make from './pages/Make';
-import Vehicle from './pages/Vehicle';
+import AddVehicle from './pages/Vehicle';
 import {Routes, Route} from 'react-router-dom'
+import Vehicle from './pages/VechileList';
+
 
 function App() {
   return (
@@ -20,7 +22,10 @@ function App() {
         <Route path='/forms' element={<Forms/>}  />
         <Route path='/contact' element={<Contact/>}  />
         <Route path='/make' element={<Make/>}  />
+        <Route path='/add/vehicle' element={<AddVehicle/>}  />
+
         <Route path='/vehicle' element={<Vehicle/>}  />
+
 
 
       </Routes>
