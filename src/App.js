@@ -9,7 +9,7 @@ import About from './pages/About';
 import Make from './pages/Make';
 import AddVehicle from './pages/Vehicle';
 import {Routes, Route} from 'react-router-dom'
-import Vehicle from './pages/VechileList';
+import VechileList from './pages/VechileList';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path='/make' element={<Make/>}  />
         <Route path='/add/vehicle' element={<AddVehicle/>}  />
 
-        <Route path='/vehicle' element={<Vehicle/>}  />
+        <Route path='/vehicle' element={<VechileList/>}  />
 
 
 
