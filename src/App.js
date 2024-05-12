@@ -1,37 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
-// import { Routes } from 'react-router-dom';
-import Contact from './pages/Contact';
-import Forms from './pages/Forms';
-import Home from './pages/Home';
-import About from './pages/About';
-import Make from './pages/Make';
-import AddVehicle from './pages/Vehicle';
+import Contact from './pages/Contact'
+import About from './pages/AboutUs'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Make from './pages/Make'
 import {Routes, Route} from 'react-router-dom'
-import VechileList from './pages/VechileList';
+import Addvehicle from './pages/Addvehicle'
+import Vechilelist from './pages/Vehiclelist'
 
-
-function App() {
-  return (
+const App = ()=>{
+  return(
     <div>
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}  />
         <Route path='/about' element={<About/>}  />
-        <Route path='/forms' element={<Forms/>}  />
         <Route path='/contact' element={<Contact/>}  />
         <Route path='/make' element={<Make/>}  />
-        <Route path='/add/vehicle' element={<AddVehicle/>}  />
-
-        <Route path='/vehicle' element={<VechileList/>}  />
-
-
+        <Route path='/add/vehicle' element={<Addvehicle/>}  />
+        <Route path='/Vehiclelist' element={<Vechilelist/>}  />
 
       </Routes>
-    </div>  
 
-  );
+    </div>
+  )
 }
 
-export default App;
+
+export default App

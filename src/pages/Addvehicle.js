@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Vehicle = () => {
+const Addvehicle = () => {
   const navigate = useNavigate()
 
   const [name, setName] = useState('')
@@ -29,7 +29,7 @@ const Vehicle = () => {
       });
       if (response){
         console.log('Response:', response.data);
-        navigate('/vehicle')
+        navigate('/vehiclelist')
       }
       // Handle success
     } catch (error) {
@@ -84,4 +84,4 @@ const Vehicle = () => {
   )
 }
 
-export default Vehicle
+export default Addvehicle

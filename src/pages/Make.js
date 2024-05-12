@@ -18,6 +18,7 @@ const Make = () => {
         }
       });
       console.log('Response:', response.data);
+      setName('')
       // Handle success
     } catch (error) {
       console.error('Error:', error);

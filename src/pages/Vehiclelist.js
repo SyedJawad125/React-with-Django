@@ -2,7 +2,7 @@ import {React, useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-const VechileList = () => {
+const Vechilelist = () => {
 
     const [records, setRecords] = useState([])
     const [data, setData] = useState([])
@@ -61,4 +61,4 @@ const VechileList = () => {
   )
 }
 
-export default VechileList
+export default Vechilelist
