@@ -72,11 +72,13 @@ const Addvehicle = () => {
           <option selected>Open this select menu</option>
           <option value="1">Audi</option>
           <option value="2">Mercedes</option>
-          <option value="4">Toyota</option>
-          <option value="5">Honda</option>
-          <option value="6">HAVAL</option>
-          <option value="7">Suzuki</option>
-          <option value="8">Nissan</option>
+          <option value="3">Toyota</option>
+          <option value="4">Honda</option>
+          <option value="5">HAVAL</option>
+          <option value="6">Suzuki</option>
+          <option value="7">Nissan</option>
+          <option value="8">MG</option>
+
         </select>
 
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
