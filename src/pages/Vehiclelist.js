@@ -1,6 +1,7 @@
 import {React, useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import Card from '../components/VechileCard'   //Props
 
 const Vechilelist = () => {
 
@@ -28,8 +29,8 @@ const Vechilelist = () => {
 
 
   return (
-    <div class='container'>
-        <h2 class='mt-4'>VechileList</h2>
+    <div class='container' id='vehicle1' style={{ marginTop: '6rem' }}>
+        <h2 class='mt-4'>Vehicles are Available</h2>
 
         <Link type="submit" class="btn btn-primary mt-3" to='/add/vehicle'>Add Vehicle</Link>
         
@@ -41,20 +42,11 @@ const Vechilelist = () => {
             
             { records ? 
             records.map(item => (
-                <div class="card" style={{width: "18rem"}}>
-                    <div class="card-body">
-                        <h5 class="card-title">{item.name}</h5>
-                        <p class="card-text">{item.model}</p>
-                        <p class="card-text">{item.make}</p>
-
-                    </div>
-                </div>
-
+               <Card item={item}/>
     )) : 
     <p>Loading....</p>
     }
         </div>
-        
         
     
     </div>

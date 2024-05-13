@@ -12,22 +12,29 @@ const Navbar = () =>{
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <Link class="nav-link active" aria-current="page" to="/about">About</Link>
+                            {/* <Link class="nav-link active" aria-current="page" to="/about">About</Link> */}
+                            <a class="nav-link active" href='#about1' >About</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            {/* <Link class="nav-link active" aria-current="page" to="/forms">Forms</Link> */}
+                            <a class="nav-link active" href='#services1' >Services</a>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link active" aria-current="page" to="/contact">Contact</Link>
+                            {/* <Link class="nav-link active" aria-current="page" to="/best">Best</Link> */}
+                            <a class="nav-link active" href='#best1' >Best Sellings</a>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link active" aria-current="page" to="/forms">Forms</Link>
+                            {/* <Link class="nav-link active" aria-current="page" to="/makelist">Make</Link> */}
+                            <a class="nav-link active" href='#make1' >Make</a>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link active" aria-current="page" to="/best">Best</Link>
+                            {/* <Link class="nav-link active" aria-current="page" to="/vehiclelist">Vehicle</Link> */}
+                            <a class="nav-link active" href='#vehicle1' >Vehichle</a>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link active" aria-current="page" to="/make">Make</Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link class="nav-link active" aria-current="page" to="/vehiclelist">Vehicle</Link>
+                            {/* <Link class="nav-link active" aria-current="page" to="/contact">Contact</Link> */}
+                            <a class="nav-link active" href='#contact1' >Contact</a>
                         </li>
                     </ul>
                     
