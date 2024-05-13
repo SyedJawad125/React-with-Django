@@ -1,6 +1,10 @@
 import {React, useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Addmake = () => {
   const navigate = useNavigate()
@@ -20,6 +24,10 @@ const Addmake = () => {
       });
       if (response){
       console.log('Response:', response.data);
+
+
+      // toast.success("Make added!");
+
       navigate('/Makelist')
     //   setName('')
       }
@@ -44,6 +52,9 @@ const Addmake = () => {
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
      </form>
+
+                    {/* <ToastContainer /> */}
+ 
     </div>
   )
 }

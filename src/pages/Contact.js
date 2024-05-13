@@ -4,7 +4,7 @@ import '../App.css'
 const Contact = () => {
   return (
     
-      <div class="container" id='contact1' style={{ marginTop: '6rem' } }>
+      <div class="container"  >
         <h2 class='mt-3'>Contact Us</h2>
         <form action="action_page.php" >
 

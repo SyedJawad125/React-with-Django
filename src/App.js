@@ -4,9 +4,10 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import {Routes, Route} from 'react-router-dom'
 import Addvehicle from './pages/Addvehicle'
-import Vechilelist from './pages/Vehiclelist'
+import Vehiclelist from './pages/Vehiclelist'
 import Makelist from './pages/Makelist'
 import Addmake from './pages/Addmake'
+import Services from './pages/Services'
 import Best from './pages/Best'
 import Forms from './pages/Forms'
 
@@ -15,7 +16,7 @@ const App = ()=>{
     <div>
       <Navbar/>
        
-       <Home />
+       {/* <Home />
 
        <About />
 
@@ -27,11 +28,19 @@ const App = ()=>{
 
        <Vechilelist />
 
-       <Contact />
+       <Contact /> */}
 
 
 
       <Routes>
+        <Route path='/' element={<Home/>}  />
+        <Route path='/about' element={<About/>}  />
+        <Route path='/forms' element={<Forms/>}  />
+        <Route path='/services' element={<Services/>} />
+        <Route path='/best' element={<Best/>}  />
+        <Route path='/makelist' element={<Makelist/>}  />
+        <Route path='/vehiclelist' element={<Vehiclelist/>}  />
+        <Route path='/contact' element={<Contact/>}  />
         <Route path='/add/Addmake' element={<Addmake/>}  />
         <Route path='/add/vehicle' element={<Addvehicle/>}  />
       </Routes>

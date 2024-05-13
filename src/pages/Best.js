@@ -8,7 +8,7 @@ const Best = () => {
   return (
     <div>
 
-<div class='container'  id='best1'  style={{ marginTop: '6rem' }} >
+<div class='container'   >
                 
           <div class="about-section">
               <h1>Best Sellings</h1>
