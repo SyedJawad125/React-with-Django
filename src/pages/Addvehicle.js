@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,10 +12,25 @@ const Addvehicle = () => {
   const [price, setPrice] = useState('')
   const [make, setMake] = useState('')
 
+  const [makeRecords, setMakeRecords] = useState([])
 
+// useFfect is used for Select dropdown.
+  useEffect(()=>{
+    const fetchMake = async () =>{
+      const res = await axios.get('http://localhost:8000/base/make')
+      try{
+          if (res){
+            setMakeRecords(res.data.data)
+          }
+      }
+      catch (error){
+          console.log('error occured', error)
+      }
+  }
+  fetchMake();
+  }, [])
 
-  // console.log('name', name)
-
+// handleSubmit is used for data save in server.
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -69,15 +84,15 @@ const Addvehicle = () => {
         </div>
 
         <select class="form-select" aria-label="Default select example" onChange={e => setMake(e.target.value)}>
-          <option selected>Open this select menu</option>
-          <option value="1">Audi</option>
-          <option value="2">Mercedes</option>
-          <option value="3">Toyota</option>
-          <option value="4">Honda</option>
-          <option value="5">HAVAL</option>
-          <option value="6">Suzuki</option>
-          <option value="7">Nissan</option>
-          <option value="8">MG</option>
+        <option selected>Select Make</option>
+
+          { makeRecords ?
+            makeRecords.map(item => (
+              <option value={item.id} key={item.id}>{item.name}</option>
+            ))
+            :
+            <option selected>No Records</option>
+          }
 
         </select>
 

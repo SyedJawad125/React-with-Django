@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import axios from 'axios'
 // import Card from '../components/VechileCard'   //Props
 
@@ -28,7 +28,6 @@ const Vehiclelist = () => {
     },   [flag])
 
 
-
     const deleteRecord = async (id) => {
         try{
           const res = await axios.delete(`http://localhost:8000/base/vehicle?id=${id}`)
@@ -42,7 +41,6 @@ const Vehiclelist = () => {
           console.log(error)
         }
       }
-
 
 
   return (
@@ -63,7 +61,7 @@ const Vehiclelist = () => {
                     <div class="card-body">
                         <h5 class="card-title">{item.name}</h5>
                         <p class="card-text">{item.model}</p>
-                        <p class="card-text">{item.make}</p>
+                        <p class="card-text">{item.make.name}</p>
                         <button class='btn btn-danger'onClick={()=> deleteRecord(item.id)}>Delete</button>
                     </div>
                 </div>

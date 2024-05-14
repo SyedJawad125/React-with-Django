@@ -19,7 +19,6 @@ const Navbar = () =>{
                             <Link class="nav-link active" aria-current="page" to="/services">Services</Link>
                             {/* <a class="nav-link active" href='#services1' >Services</a> */}
                         </li>
-                        
                         <li class="nav-item">
                             <Link class="nav-link active" aria-current="page" to="/forms">Forms</Link>
                             {/* <a class="nav-link active" href='#services1' >Services</a> */}
@@ -40,8 +39,7 @@ const Navbar = () =>{
                             <Link class="nav-link active" aria-current="page" to="/contact">Contact</Link>
                             {/* <a class="nav-link active" href='#contact1' >Contact</a> */}
                         </li>
-                    </ul>
-                    
+                    </ul>           
                     </div>
                 </div>
             </nav>
