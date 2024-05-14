@@ -146,3 +146,34 @@ input[type=submit]:hover {
 
 
 
+/* Navbar */
+
+
+
+
+
+.navbar a {
+  color: #c07171;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: normal;
+}
+
+.navbar a:hover {
+  color: rgb(66, 151, 179);
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
