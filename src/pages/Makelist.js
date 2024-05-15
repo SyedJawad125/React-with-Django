@@ -1,11 +1,12 @@
 import {React, useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 // import Card from '../components/MakeCard'
 // import { findAllByTestId } from '@testing-library/react'
 
 const Makelist = () => {
 
+    const navigate = useNavigate()
     const [records, setRecords] = useState([])
     const [data, setData] = useState([])
     const [flag, setFlag] = useState(false)
@@ -42,7 +43,9 @@ const Makelist = () => {
             }
          }
 
-
+         const updateRecord = async (item) => {
+            navigate('/update/make', {state: {data: item}})
+        }
   return (
     <div class='container' >
         <h2 class='mt-4'>List Of Companies We deals Here!</h2>
@@ -61,6 +64,7 @@ const Makelist = () => {
                 <div class="card-body">
                     <h5 class="card-title">{item.name}</h5>
                     <button class='btn btn-danger'onClick={()=> deleteRecord(item.id)}>Delete</button>
+                    <button class='btn btn-primary mx-2' onClick={()=> updateRecord(item)}>Update</button>
                 </div>
                 </div>
 

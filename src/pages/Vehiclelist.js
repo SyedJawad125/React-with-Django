@@ -1,9 +1,11 @@
 import {React, useEffect, useState} from 'react'
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 // import Card from '../components/VechileCard'   //Props
 
 const Vehiclelist = () => {
+
+    const navigate = useNavigate()
 
     const [records, setRecords] = useState([])
     const [data, setData] = useState([])
@@ -42,6 +44,11 @@ const Vehiclelist = () => {
         }
       }
 
+    const updateRecord = async (item) => {
+        navigate('/update/vehicle', {state: {data: item}})
+    }
+
+
 
   return (
     <div class='container' >
@@ -63,6 +70,8 @@ const Vehiclelist = () => {
                         <p class="card-text">{item.model}</p>
                         <p class="card-text">{item.make.name}</p>
                         <button class='btn btn-danger'onClick={()=> deleteRecord(item.id)}>Delete</button>
+                        <button class='btn btn-primary mx-2'onClick={()=> updateRecord(item)}>Update</button>
+
                     </div>
                 </div>
     )) : 

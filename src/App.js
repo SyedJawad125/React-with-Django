@@ -10,6 +10,9 @@ import Addmake from './pages/Addmake'
 import Services from './pages/Services'
 import Best from './pages/Best'
 import Forms from './pages/Forms'
+import UpdateVehicle from './pages/UpdateVehicle'
+import UpdateMake from './pages/UpdateMake'
+
 
 const App = ()=>{
   return(
@@ -43,6 +46,10 @@ const App = ()=>{
         <Route path='/contact' element={<Contact/>}  />
         <Route path='/add/Addmake' element={<Addmake/>}  />
         <Route path='/add/vehicle' element={<Addvehicle/>}  />
+
+        <Route path='/update/vehicle' element={<UpdateVehicle/>}  />
+        <Route path='/update/make' element={<UpdateMake/>}  />
+
       </Routes>
 
     </div>
