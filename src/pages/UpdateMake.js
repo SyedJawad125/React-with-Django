@@ -18,7 +18,7 @@ const UpdateMake = () => {
     e.preventDefault();
     try {
 
-      const payload = {"name":name}
+      const payload = {"id": data.id, "name":name}
       const response = await axios.patch('http://localhost:8000/base/make', payload , {
         headers: {
           'Content-Type': 'application/json'

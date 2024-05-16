@@ -46,7 +46,6 @@ const App = ()=>{
         <Route path='/contact' element={<Contact/>}  />
         <Route path='/add/Addmake' element={<Addmake/>}  />
         <Route path='/add/vehicle' element={<Addvehicle/>}  />
-
         <Route path='/update/vehicle' element={<UpdateVehicle/>}  />
         <Route path='/update/make' element={<UpdateMake/>}  />
 
