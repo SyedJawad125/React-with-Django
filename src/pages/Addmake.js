@@ -28,7 +28,7 @@ const Addmake = () => {
 
       // toast.success("Make added!");
 
-      navigate('/Makelist')
+      navigate('/makelist', {state: {message: 'Maker Added!'}})
     //   setName('')
       }
       // Handle success

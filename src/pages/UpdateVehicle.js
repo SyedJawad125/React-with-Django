@@ -46,7 +46,7 @@ const Updatevehicle = () => {
         }
       });
       if (response){
-        navigate('/vehiclelist')
+        navigate('/vehiclelist', {state: {message: 'Vehicle Updated!'}})
       }
     } catch (error) {
       console.error('Error:', error);

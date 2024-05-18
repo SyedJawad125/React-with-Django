@@ -44,7 +44,7 @@ const Addvehicle = () => {
       });
       if (response){
         console.log('Response:', response.data);
-        navigate('/vehiclelist')
+        navigate('/vehiclelist', {state: {message: 'Vehicle Added!'}})
       }
       // Handle success
     } catch (error) {

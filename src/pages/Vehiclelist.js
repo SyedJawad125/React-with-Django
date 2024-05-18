@@ -1,18 +1,33 @@
 import {React, useEffect, useState} from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
 import axios from 'axios'
 // import Card from '../components/VechileCard'   //Props
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Vehiclelist = () => {
 
     const navigate = useNavigate()
+    const location = useLocation()
 
     const [records, setRecords] = useState([])
     const [data, setData] = useState([])
     const [flag, setFlag] = useState(false)
 
+    // const [delPopup, setDelPopup] = useState(false)
+
 
     useEffect(()=>{
+
+        if (location.state && location.state.message){
+          toast.success(location.state.message)
+          navigate('/vehiclelist', {state: ''})
+        }
+        else if (flag == true){
+          toast.success('Vehicle deleted')
+          setFlag(false)
+        }
+
         const receiveData = async () =>{
             const res = await axios.get('http://localhost:8000/base/vehicle')
             try{
@@ -27,7 +42,7 @@ const Vehiclelist = () => {
         }
         receiveData();
         
-    },   [flag])
+    },   [flag, location.state])
 
 
     const deleteRecord = async (id) => {
@@ -36,7 +51,7 @@ const Vehiclelist = () => {
     
           if (res){
             console.log('deleted successfully')
-            setFlag(!flag)
+            setFlag(true)
           }
         }
         catch (error){
@@ -78,6 +93,7 @@ const Vehiclelist = () => {
     <p>Loading....</p>
     }
         </div>
+        <ToastContainer/>
     </div>
   )
 }

@@ -25,7 +25,7 @@ const UpdateMake = () => {
         }
       });
       if (response){
-        navigate('/makelist')
+        navigate('/makelist', {state: {message: 'Vehicle Updated!'}})
       }
     } catch (error) {
       console.error('Error:', error);

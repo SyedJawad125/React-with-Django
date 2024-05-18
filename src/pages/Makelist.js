@@ -1,18 +1,28 @@
 import {React, useEffect, useState} from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
 import axios from 'axios'
-// import Card from '../components/MakeCard'
-// import { findAllByTestId } from '@testing-library/react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Makelist = () => {
 
     const navigate = useNavigate()
+    const location = useLocation()
+
     const [records, setRecords] = useState([])
     const [data, setData] = useState([])
     const [flag, setFlag] = useState(false)
 
 
     useEffect(()=>{
+        if (location.state && location.state.message){
+            toast.success(location.state.message)
+            navigate('/makelist', {state: ''})
+          }
+          else if (flag == true){
+            toast.success('Maker deleted')
+            setFlag(false)
+          }
 
         const receiveData = async () =>{
             const res = await axios.get('http://localhost:8000/base/make')
@@ -27,7 +37,7 @@ const Makelist = () => {
             }
         }
         receiveData();
-    },   [flag])
+    },   [flag, location.state])
 
 
          const deleteRecord = async (id) => {
@@ -35,7 +45,7 @@ const Makelist = () => {
                 const res = await axios.delete(`http://localhost:8000/base/make?id=${id}`)
                 if(res){
                     console.log('Delete Successfully')
-                    setFlag(!flag)
+                    setFlag(true)
                 }
             }
             catch(error){
@@ -71,10 +81,8 @@ const Makelist = () => {
     )) : 
     <p>Loading....</p>
     }
-        </div>
-        
-        
-    
+        </div>  
+        <ToastContainer/>
     </div>
   )
 }
